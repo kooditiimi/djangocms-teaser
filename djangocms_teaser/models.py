@@ -30,7 +30,8 @@ class Teaser(CMSPlugin):
     page_link = models.ForeignKey(
         Page, verbose_name=_("page"),
         help_text=_("If present image will be clickable"), blank=True,
-        null=True, limit_choices_to={'publisher_is_draft': True})
+        null=True, limit_choices_to={'publisher_is_draft': True},
+        on_delete=models.SET_NULL)
 
     url = models.CharField(
         _("link"), max_length=255, blank=True, null=True,
