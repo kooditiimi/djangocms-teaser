@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(verbose_name='image', blank=True, null=True, upload_to=cms.models.pluginmodel.get_plugin_media_path)),
                 ('url', models.CharField(help_text='If present image will be clickable.', blank=True, null=True, max_length=255, verbose_name='link')),
                 ('description', models.TextField(verbose_name='description', blank=True, null=True)),
-                ('page_link', models.ForeignKey(help_text='If present image will be clickable', blank=True, verbose_name='page', to='cms.Page', null=True)),
+                ('page_link', models.ForeignKey(help_text='If present image will be clickable', blank=True, verbose_name='page', to='cms.Page', null=True, on_delete=models.CASCADE)),
             ],
             options={
                 'abstract': False,
