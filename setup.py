@@ -7,15 +7,21 @@ CLASSIFIERS = [
     'Development Status :: 5 - Production/Stable',
     'Environment :: Web Environment',
     'Framework :: Django',
+    'Framework :: Django :: 4.0',
+    'Framework :: Django :: 4.1',
+    'Framework :: Django :: 4.2',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: BSD License',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
     'Topic :: Communications',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content :: Message Boards',
-    'Programming Language :: Python :: 2.6',
-    'Programming Language :: Python :: 2.7',
 ]
 
 setup(
@@ -28,12 +34,17 @@ setup(
     packages=[
         'djangocms_teaser',
         'djangocms_teaser.migrations',
-        'djangocms_teaser.south_migrations'
     ],
     license='LICENSE.txt',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
     long_description=open('README.rst').read(),
     include_package_data=True,
-    zip_safe=False
+    zip_safe=False,
+    install_requires=[
+        'django-cms>=4.0',
+        'Django>=4.0',
+        'Pillow',
+    ],
+    python_requires='>=3.8',
 )

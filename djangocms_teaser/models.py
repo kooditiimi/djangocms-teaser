@@ -13,12 +13,6 @@ except ImportError:
         for information
         """
         return instance.get_media_path(filename)
-#from cms.utils.compat.dj import python_2_unicode_compatible
-#from django.utils.six import python_2_unicode_compatible
-from six import python_2_unicode_compatible
-
-
-@python_2_unicode_compatible
 class Teaser(CMSPlugin):
     """
     A Teaser
@@ -31,8 +25,7 @@ class Teaser(CMSPlugin):
     page_link = models.ForeignKey(
         Page, verbose_name=_("page"),
         help_text=_("If present image will be clickable"), blank=True,
-        null=True, limit_choices_to={'publisher_is_draft': True},
-        on_delete=models.CASCADE)
+        null=True, on_delete=models.CASCADE)
 
     url = models.CharField(
         _("link"), max_length=255, blank=True, null=True,
