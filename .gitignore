@@ -5,3 +5,5 @@ local_settings.py
 build
 dist
 djangocms_teaser.egg-info
+.junie
+.idea
